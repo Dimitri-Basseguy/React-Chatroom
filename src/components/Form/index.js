@@ -12,6 +12,11 @@ const Form = () => (
       placeholder="Saisissez votre message..."
       className="form__input"
     />
+    <button
+      type="submit"
+      className="form__btn"
+    >Ok
+    </button>
   </form>
 );
 
