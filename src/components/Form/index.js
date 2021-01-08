@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Send } from 'react-feather';
 
 // == Import
 import './form.scss';
@@ -15,7 +16,7 @@ const Form = () => (
     <button
       type="submit"
       className="form__btn"
-    >Ok
+    ><Send />
     </button>
   </form>
 );

@@ -6,9 +6,10 @@ import './settings.scss';
 
 // == Composant
 const Settings = () => (
-  <div className="settings">
-    Settings
-  </div>
+  <form className="settings">
+    <p className="settings__pseudo">Pseudo :</p>
+    <input className="settings__input" placeholder="Votre pseudo" type="text" />
+  </form>
 );
 
 // == Export

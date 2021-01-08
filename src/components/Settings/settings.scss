@@ -1,2 +1,19 @@
 @import 'src/styles/vars';
 
+.settings {
+  position: absolute;
+  right: -5rem;
+  top: 3rem;
+  background-color: $darkColor;
+  padding: 1rem;
+  border-radius: 4px;
+
+  &__input {
+    height: 2em;
+  }
+
+  &__pseudo {
+    color: $lightColor;
+    font-size: .7em;
+  }
+}
