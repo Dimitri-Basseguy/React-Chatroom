@@ -3,7 +3,7 @@ import React from 'react';
 
 // == Import
 import './app.scss';
-import Tchatbox from 'src/components/Tchatbox';
+import Tchatbox from 'src/containers/Tchatbox';
 import Form from 'src/components/Form';
 import Settings from 'src/components/Settings';
 
@@ -32,7 +32,7 @@ const App = () => (
     <header className="header">
       <h1>React Chatroom</h1>
     </header>
-    <Tchatbox messages={message} />
+    <Tchatbox />
     <Form />
     <Settings />
   </div>

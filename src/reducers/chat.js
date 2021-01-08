@@ -1,6 +1,6 @@
 const initialState = {
   // données temporaires
-  message: [
+  messages: [
     {
       id: 1,
       author: 'Chow Yunfat',
@@ -9,7 +9,7 @@ const initialState = {
     {
       id: 2,
       author: 'Chow Yunfat',
-      content: 'lorem dolor',
+      content: 'state lorem dolor',
     },
     {
       id: 3,
