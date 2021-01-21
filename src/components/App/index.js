@@ -4,7 +4,7 @@ import React from 'react';
 // == Import
 import './app.scss';
 import Tchatbox from 'src/containers/Tchatbox';
-import Form from 'src/components/Form';
+import Form from 'src/containers/Form';
 import Settings from 'src/containers/Settings';
 
 // == Composant
