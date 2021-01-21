@@ -1,4 +1,4 @@
-import { CHANGE_INPUT_PSEUDO } from 'src/actions/chat';
+import { CHANGE_INPUT_PSEUDO, SAVE_PSEUDO } from 'src/actions/chat';
 
 const initialState = {
   // données temporaires
@@ -19,6 +19,9 @@ const initialState = {
       content: 'lorem amet',
     },
   ],
+  // pseudo actuel de l'user
+  pseudo: '',
+  // contenu de l'input permettant de changer le pseudo
   inputPseudo: '',
 };
 
@@ -28,6 +31,16 @@ const chatReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         inputPseudo: action.value,
+      };
+
+    case SAVE_PSEUDO:
+      return {
+        // on déverse lme infos du state actuel
+        ...state,
+        // on ecrase certaines propriétés du state
+        pseudo: state.inputPseudo,
+        // on vide le champ input
+        inputPseudo: '',
       };
 
     default: return state;

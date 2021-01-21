@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { changeInputPseudo } from 'src/actions/chat';
+import { changeInputPseudo, savePseudo } from 'src/actions/chat';
 
 import Settings from 'src/components/Settings';
 
@@ -12,6 +12,10 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: callback qui contient un appel à dispatch
   setValue: (newValue) => {
     dispatch(changeInputPseudo(newValue));
+  },
+  saveValue: () => {
+    // dire au store qu'il faut enregistrer la value de l'input pour le pseudo
+    dispatch(savePseudo());
   },
 });
 

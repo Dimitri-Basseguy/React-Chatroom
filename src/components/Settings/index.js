@@ -6,25 +6,34 @@ import PropTypes from 'prop-types';
 import './settings.scss';
 
 // == Composant
-const Settings = ({ value, setValue }) => (
-  <form className="settings">
-    <input
-      className="settings__input"
-      type="text"
-      placeholder="Votre pseudo"
-      value={value}
-      onChange={(e) => {
-        console.log(`nouvelle valeur: ${e.target.value}`);
-        setValue(e.target.value);
-      }}
-    />
-  </form>
-);
+const Settings = ({ value, setValue, saveValue }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    saveValue();
+  };
+
+  return (
+    <form className="settings" onSubmit={handleSubmit}>
+      <input
+        className="settings__input"
+        type="text"
+        placeholder="Votre pseudo"
+        value={value}
+        onChange={(e) => {
+          console.log(`nouvelle valeur: ${e.target.value}`);
+          setValue(e.target.value);
+        }}
+      />
+    </form>
+  );
+};
 
 Settings.propTypes = {
   value: PropTypes.string.isRequired,
   /* paramètre : la nouvelle valeur */
   setValue: PropTypes.func.isRequired,
+  /*  pas de paramètre */
+  saveValue: PropTypes.func.isRequired,
 };
 
 // == Export
