@@ -1,0 +1,22 @@
+[oh-my-zsh] Insecure completion-dependent directories detected:
+drwxrwxr-x  7 dimitribasseguy  admin  238 Jan 21 10:15 /usr/local/share/zsh
+drwxrwxr-x  4 dimitribasseguy  admin  136 Jul 19  2020 /usr/local/share/zsh/site-functions
+
+[oh-my-zsh] For safety, we will not load completions from these directories until
+[oh-my-zsh] you fix their permissions and ownership and restart zsh.
+[oh-my-zsh] See the above list for directories with group or other writability.
+
+[oh-my-zsh] To fix your permissions you can do so by disabling
+[oh-my-zsh] the write permission of "group" and "others" and making sure that the
+[oh-my-zsh] owner of these directories is either root or your current user.
+[oh-my-zsh] The following command may help:
+[oh-my-zsh]     compaudit | xargs chmod g-w,o-w
+
+[oh-my-zsh] If the above didn't help or you want to skip the verification of
+[oh-my-zsh] insecure directories you can set the variable ZSH_DISABLE_COMPFIX to
+[oh-my-zsh] "true" before oh-my-zsh is sourced in your zshrc file.
+
+]2;dimitribasseguy@iMac-de-Dimitri:/Applications/MAMP/htdocs/React/React-Chatroom]1;..eact-Chatroom[?1h=[?1l>]2;yarn build]1;yarnyarn run v1.22.10
+$ cross-env NODE_ENV=production webpack --config config/webpack.prod.js
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+]2;dimitribasseguy@iMac-de-Dimitri:/Applications/MAMP/htdocs/React/React-Chatroom]1;..eact-Chatroom[?1h=[?1l>]2;git add .]1;git

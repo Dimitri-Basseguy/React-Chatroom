@@ -65,11 +65,10 @@ const mapStateToProps = (state) => (
   };
 );
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = (dispatch) => ({
     // nom de la prop à remplir: callback qui contient un appel à dispatch
   };
-};
+);
 
 export default connect(
   mapStateToProps,
@@ -85,15 +84,64 @@ export default connect(
 - indiquer le nom de la prop à remplir et la propriété du state qui correspond. Par exemple :
 
 ``` javascript
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     // nom de la prop à remplir: donnée à récupérer dans le state
     messages: state.listMessages,
   };
-};
+);
 ```
 
 => on va injecter _state.listMessages_ dans la prop _messages_ du composant _LeComposant_
 
 ## mapDispatchToProps : les props qui doivent envoyer une action au store
 
+Envoyer une action au store : par exemple si on veut modifier le state
+
+- Si on n'a pas encore de fichier pour les actions : creer un fichier 'src/reducers/nameForTheActions.js'
+
+``` javascript
+// action types
+export const DO_SOMETHING = 'DO_SOMETHING';
+
+// action creators
+export const doSomething = (/* newValue*/) => ({
+  type: DO_SOMETHING,
+  /*value: newValue,*/
+});
+
+```
+
+- Si l'action dont on a besoin n'existe pas encore : définir le _action type_ ("quelle est l'intention") et le _action creator_ (fonction qui permet de creéer une action de tel type).
+
+- ajouer le traitement de l'action dans le reducer (=quel est son impact sur le state)
+
+
+``` javascript
+import { DO_SOMETHING } from 'src/reducers/nameForTheAction.js';
+
+[...]
+
+switch (action.type) {
+    case DO_SOMETHING:
+      return {
+        // on déverse lme infos du state actuel
+        ...state,
+        // on ecrase certaines propriétés du state
+        propriété_à_Modifier: nouvelle_valeur /*(action.value)*/,
+        propriété_à_Modifier2: action.payload,
+      };
+    [...]
+```
+
+- dans mapDispatchToProps, indiquer le nom de la prop à remplir et la callback correspondante, qui utilise _disptach_ et le _action creator_ pour l'action
+
+``` javascript
+import { doSomething } from 'src/reducers/nameForTheAction.js';
+
+const mapDispatchToProps = (dispatch) => ({
+  // nom de la prop à remplir: callback qui contient un appel à dispatch
+  setValue: (newValue) => {
+    dispatch(doSomething(/* param1 */));
+  },
+});
+```

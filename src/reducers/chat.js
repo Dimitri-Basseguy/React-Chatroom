@@ -1,3 +1,5 @@
+import { CHANGE_INPUT_PSEUDO } from 'src/actions/chat';
+
 const initialState = {
   // données temporaires
   messages: [
@@ -17,11 +19,17 @@ const initialState = {
       content: 'lorem amet',
     },
   ],
-  inputPseudo: 'Chow yun-fat',
+  inputPseudo: '',
 };
 
 const chatReducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CHANGE_INPUT_PSEUDO:
+      return {
+        ...state,
+        inputPseudo: action.value,
+      };
+
     default: return state;
   }
 };
