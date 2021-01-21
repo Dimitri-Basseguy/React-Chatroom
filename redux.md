@@ -18,7 +18,6 @@ export default nameForTheReducer;
 ```
 
 
-
 - Créer un fichier `src/store/index.js`
 
 ``` javascript
@@ -94,7 +93,7 @@ const mapStateToProps = (state) => {
 };
 ```
 
-=> on va injecter _state.listMessages_ la prop _messages_ du composant _LeComposant_
+=> on va injecter _state.listMessages_ dans la prop _messages_ du composant _LeComposant_
 
 ## mapDispatchToProps : les props qui doivent envoyer une action au store
 

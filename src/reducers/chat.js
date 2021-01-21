@@ -17,6 +17,7 @@ const initialState = {
       content: 'lorem amet',
     },
   ],
+  inputPseudo: 'Chow yun-fat',
 };
 
 const chatReducer = (state = initialState, action = {}) => {
